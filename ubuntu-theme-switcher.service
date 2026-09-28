@@ -1,0 +1,14 @@
+[Unit]
+Description=Automatic Ubuntu 24.04 Dark/Light Theme Switcher Project
+After=graphical-session.target
+
+[Service]
+Type=simple
+# Set your desired coordinates here
+Environment="LOCATION_LATITUDE=49.7333"
+Environment="LOCATION_LONGITUDE=11.1500"
+ExecStart=%h/.local/bin/dark-light-switcher
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

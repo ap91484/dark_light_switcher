@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dark_light_switcher"
+version = "0.1.0"
+description = "Automatic Ubuntu 24.04 Dark/Light Theme Switcher using suntime"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "suntime>=1.2.5",
+]
+
+[project.scripts]
+# This defines the command name installed to ~/.local/bin
+dark-light-switcher = "dark_light_switcher.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dark_light_switcher"]
